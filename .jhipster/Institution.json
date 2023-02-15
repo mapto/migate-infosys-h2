@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215150558",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "institution",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "Country",
+      "fieldValues": "UNITED,STATES,KINGDOM,GERMANY,FRANCE,ITALY,SPAIN,RUSSIA"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Institution",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "roleInstitution",
+      "otherEntityRelationshipName": "institution",
+      "ownerSide": true,
+      "relationshipName": "role",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "owner",
+      "relationshipName": "site",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "sponsor",
+      "ownerSide": false,
+      "relationshipName": "product",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}
