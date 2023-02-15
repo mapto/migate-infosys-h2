@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230215151209",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "location",
+  "fields": [
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "Country",
+      "fieldValues": "UNITED,STATES,KINGDOM,GERMANY,FRANCE,ITALY,SPAIN,RUSSIA"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "not an ignored comment",
+  "jpaMetamodelFiltering": false,
+  "name": "Location",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "institution",
+      "otherEntityRelationshipName": "site",
+      "relationshipName": "owner",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}
