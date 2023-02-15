@@ -1,0 +1,78 @@
+enum Country {
+	UNITED STATES,
+    UNITED KINGDOM,
+    GERMANY,
+    FRANCE,
+    ITALY,
+    SPAIN,
+    RUSSIA
+}
+
+enum Language {
+	ENGLISH,
+    SPANISH,
+    FRENCH,
+    RUSSIAN,
+    ITALIAN
+}
+
+enum Gender {
+	MALE,
+    FEMALE,
+    OTHER,
+    UNSPECIFIED
+}
+
+entity Person {
+	name String required
+    gender Gender
+    dob LocalDate
+    country Country
+    language Language
+}
+
+entity Institution {
+	name String
+    country Country
+}
+
+// actually piece of work, product
+entity Work {
+    name String
+    published LocalDate
+}
+
+entity RoleWork{
+	name String
+    start LocalDate
+    end LocalDate
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	address String
+    country Country
+}
+
+entity RoleInstitution{
+	name String
+    start LocalDate
+    end LocalDate
+}
+
+relationship OneToMany {
+
+	Location{owner} to Institution{site}
+}
+
+relationship ManyToMany {
+	Work{responsible} to Person{work}
+    Work{sponsor} to Institution{product}
+
+    Person{role} to RoleInstitution{person}
+	Institution{role} to RoleInstitution{institution}
+
+    Person{role} to RoleWork{person}
+	Work{role} to RoleWork{work}
+}
